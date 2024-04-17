@@ -7,8 +7,8 @@ def start_action(request):
     #If initial request
     if request.method == "GET":
       num = request.GET.get('num')
-      result = ackermann(3, int(num))
-      print(result)
+    #   result = ackermann(3, int(num))
+      result = ackermann(3, 5)
       context = {'res': result}
       return render(request, "start.html", context)
 
