@@ -6,10 +6,11 @@ calls = 0
 def start_action(request):
     #If initial request
     if request.method == "GET":
-      num = request.GET.get('num')
-      result = ackermann(3, int(num))
-      print(result)
-      context = {'res': result}
+      # num = request.GET.get('num')
+      # result = ackermann(3, int(num))
+      # print(result)
+      # context = {'res': result}
+      context = {'res': 100}
       return render(request, "start.html", context)
 
 def ackerman_fn(m, n):
