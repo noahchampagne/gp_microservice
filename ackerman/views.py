@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import random
 
 # Create your views here.
 calls = 0
@@ -8,7 +9,8 @@ def start_action(request):
     if request.method == "GET":
       num = request.GET.get('num')
     #   result = ackermann(3, int(num))
-      result = ackermann(3, 5)
+      rand_int = random.randint(3, 9)
+      result = ackermann(3, rand_int)
       context = {'res': result}
       return render(request, "start.html", context)
 
