@@ -7,9 +7,10 @@ calls = 0
 def start_action(request):
     #If initial request
     if request.method == "GET":
-      num = request.GET.get('num')
-      result = ackermann(3, int(num))
+    #   num = request.GET.get('num')
+    #   result = ackermann(3, int(num))
     #   result = ackermann(3, random.randint(3, 9))
+      result = 1
       context = {'res': result}
       return render(request, "start.html", context)
 
