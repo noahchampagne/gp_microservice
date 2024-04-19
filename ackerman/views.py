@@ -18,7 +18,7 @@ def loop_it(n):
     x = 100000
     for i in range(n):
         x = 100000
-        for j in range(256):
+        for j in range(1024):
             x = x**0.9
     return x
 
