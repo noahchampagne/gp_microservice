@@ -8,21 +8,18 @@ def start_action(request):
     #If initial request
     if request.method == "GET":
       num = request.GET.get('num')
-      result = ackermann(3, int(num))
-    #   result = ackermann(3, random.randint(3, 9))
-    #   result = 1
+    #   result = ackermann(3, int(num))
+
+      result = loop_it(int(num))
       context = {'res': result}
       return render(request, "start.html", context)
 
-# def ackerman_fn(m, n):
-#   global calls
-#   calls += 1
-#   if m == 0:
-#       return n + 1
-#   elif n == 0:
-#       return ackerman_fn(m - 1, 1)
-#   else:
-#       return ackerman_fn(m - 1, ackerman_fn(m, n - 1))
+def loop_it(n):
+    l = []
+    for i in range(n):
+        for j in range(1024):
+            l.append(j % 2)
+    return len(l)
 
 def ackermann(m, n):
     global calls
