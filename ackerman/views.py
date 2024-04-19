@@ -3,7 +3,6 @@ import random
 
 # Create your views here.
 calls = 0
-global_arr = [i for i in range(256)]
 
 def start_action(request):
     #If initial request
@@ -16,10 +15,11 @@ def start_action(request):
       return render(request, "start.html", context)
 
 def loop_it(n):
-    global global_arr
+    x = 100000
     for i in range(n):
+        x = 100000
         for j in range(256):
-            x = global_arr[j] #touch
+            x = x**0.9
     return x
 
 def ackermann(m, n):
